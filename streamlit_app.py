@@ -2,7 +2,6 @@ import streamlit
 import pandas
 import snowflake.connector
 import urllib.error 
-import URLError
 
 streamlit.title('My Parents New Healthy Diner')
 
@@ -44,4 +43,4 @@ try:
       streamlit.dataframe(back_from_function)
  
 except URLError as e:
-    streamlit.stop()
+    streamlit.error()
