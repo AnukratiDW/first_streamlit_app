@@ -41,6 +41,8 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # Transform the json into a pandas dataframe
 streamlit.dataframe(fruityvice_normalized)
 
+streamlit.stop()
+
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("use warehouse pc_rivery_wh")
